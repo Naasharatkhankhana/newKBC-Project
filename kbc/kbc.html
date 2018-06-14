@@ -1,0 +1,1180 @@
+#include<iostream>
+#include<string.h>
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>
+#include <ctime>
+#include<windows.h>
+#include<conio.h>
+static int o=0,s=0,rup=1000,a=0,b=0,de=0,c=0;
+char matrix[15][15];
+int i=0;
+using namespace std;
+long int price[13]={1000,5000,10000,25000,50000,100000,500000,1000000,2500000,5000000,10000000,50000000,70000000};
+
+string q[13][5]={
+                    {
+                      "         NAME OF THE NATIONAL ANTHOM OF THE INDIA\n\n"
+                      "         (1) JAN GAN MAN          (2) MAA TUJHE SALAM\n"
+                      "         (3) DIL HAI HINDOSTANI   (4) BANDAY MATRAM\n\n",
+
+                      "         THE STATE WHICH HAS DESERT IN INDIA\n"
+                      "         (1) RAJASTHAN      (2) PUNJAB\n"
+                      "         (3) UTTAR PRADESH  (4) MADHYA PRADESH\n",
+
+                      "         NAME OF THE FIRST PRIME MINISTER OF INDIA\n\n"
+                      "         (1) PANDIT JABAHAR LAL NAEHRU    (2) INDRA GANDHI\n"
+                      "         (3) RAJIV GANDHI                 (4) NARINDER MONDHI",
+
+                      "         WHO IS KNOWN AS FATHER OF COMPUTER\n"
+                      "         (1) CHALES BABBAGE    (2) BILL GATES\n"
+                      "         (3) R.P MISHRA        (4) SABEER BHATIA\n",
+
+                      "         WHICH OF THE FOLLOWING IS AN EXAMPLE OF BINARY NUMBER\n"
+                      "         (1) A WIBFD3     (2) 45364\n"
+                      "         (3) C 05546      (4) 100101\n"
+
+                      },
+
+                      {
+
+                      "         WHAT IS THE NATIONAL TREE OF THE INDIA\n"
+                      "         (1) THE MANGO TREE     (2) BANYANA TREE\n"
+                      "         (3) THE COCONUT TREE   (4) NOT DECLARED\n ",
+
+                      "          THE PLANET NEAREST TO THE SUN\n"
+                      "         (1) VENUS      (2) MERCURY\n"
+                      "         (3) JUPITER    (4) SATURN\n",
+
+                      "         ON THE SURFACE OF THE MOON THE WEIGHT\n "
+                      "         (1) REMAIN THE SAME     (2) INCREASES\n"
+                      "         (3) DECREASE            (4) MAY OR MAY NOT INCREASE\n",
+
+
+                      "         THE NATIONAL SPORT OF THE INDIA\n"
+                      "         (1) CRICKET     (2) HOCKEY\n"
+                      "         (3) BADMITION   (4) NONE OF THESE\n",
+
+                      "         THE COLLECTION OF 8 BITS IS CALLED\n"
+                      "         (1) BYTE      (2) WORD\n"
+                      "         (3) RECORD    (4) ALL THE ABOVE\n"
+
+                      },
+                      {
+                      "         HOW MANY GENERATION OF COMPUTER WE HAVE\n"
+                      "         (1) 6     (2) 3\n"
+                      "         (3) 4     (4) 5\n",
+
+                      "         THE HOTTEST PLANET IN THE PLANET IN THE SOLOR\n"
+                      "         (1) EARTH   (2) VENUS\n"
+                      "         (3) MARS    (4) JUPITER\n",
+
+                      "         ICC MEANS\n"
+                      "         (1) INDIAN CRICKET CONCIL             (2) INTERNATIONAL CRICKET CONCIL\n"
+                      "         (3) INTERNATIONAL COUNTRY CONCIL      (4) NONE OF THESE\n",
+
+                      "         INDIA' S FIRST SATELLITE IS NAMED AFTER\n"
+                      "         (1) ARYABHATA     (2) BHASKARA2\n"
+                      "         (3) BHASKARA1     (4) ALBERT EINSTAIN\n",
+
+                      "         THE MAIN WORKING MEMORY USED BY THE COMPUTER ARE\n"
+                      "         (1) RAM   (2) ROM\n"
+                      "         (3) DVD   (4) CD\n"
+
+
+                      },
+                      {
+
+                      "         THE LAGEST RIVER IN INDIA\n"
+                      "         (1) YAMUNA  (2) KAVERI\n"
+                      "         (3) GANGA   (4) BRAMPUTRA\n",
+
+
+                      "         THE TERM PENTIUM RELATED TO\n"
+                      "         (1) DVD               (2) HARD DISK\n"
+                      "         (3) MICROPROCESSOR    (4) MOUSE\n",
+
+                      "         WHICH GAS IS USED FOR PREPARTIOJN OF SODA WATER\n"
+                      "         (1) OXYGEN      (2) AMMONTA\n"
+                      "         (3) HYDROGEN    (4) CARBON DYOXIDE\n",
+
+                      "         HE FIRST GENERATION COMPUTER USED____ FOR CIRCUITRY.\n"
+                      "        (1) VACUUM TUBE            (2) TRANSISTORS\n"
+                      "        (3) INTEGRATED CIRCUITS    (4) LARGE SCALE ITEGRATION\n",
+
+                      "         INDIA TEAM WINNING FIRST ODI WORLD CUP WINNING IN YEAR\n "
+                      "         (1) 2015     (2) 1983\n"
+                      "         (3) 2011     (4) 2007\n"
+                      },
+                      {
+                      "         THE 2014 FOOTBALL WORLD CUP IS SCHEDULED TO BE HELD IN\n"
+                      "         (1) CHINA     (2) AUSTRALIA\n"
+                      "         (3) JAPAN     (4) BRAZIL\n",
+
+                      "         THE GAS USED FOR MAKING VAGITABLES\n"
+                      "         (1) OXYGEN      (2) CARBON DIOXIDE\n"
+                      "         (3) HYDROGEN    (4) NITROGEN\n",
+
+                      "         THE WORLD SMALLEST COUNTRY IS\n\n"
+                      "         (1) CANADA      (2) RUSSIA\n"
+                      "         (3) MALDIVES    (4) VAOTICAN CITY\n",
+
+                      "         THE COUNTRY WITHOUT INCOME TEX IS\n"
+                      "         (1) NEPAL   (2) KUWAIT\n"
+                      "         (3) BURMA   (4) SINGAPORE",
+
+                      "         WHO IS THE RICHEST INDIAN ACCORDING TO THE FORBES LIST\n"
+                      "         (1) MUKESH AMBANI     (2) LAKSHMI MITTAL\n"
+                      "         (3) SACHIN TENDULKAR  (4) ANIL AMBANI\n"
+
+                      },
+                      {
+                      "         HE PERIOD OF FIRST GENERATION COMPUTER IS\n"
+                      "         (1) 1940-1956   (2) 194-1958\n"
+                      "         (3) 1950-1960   (4) 1960-2000\n",
+
+                      "         HE PERIOD OF SECOND GENERATION COMPUTER IS\n"
+                      "         (1) 1956-1964      (2) 1956-1963\n"
+                      "         (3) 1957-1970      (4) 1975-2014\n",
+
+                      "         HE PERIOD OF THIRED GENERATION COMPUTER IS\n"
+                      "         (1) 1964-1975      (2) 1956-1963\n"
+                      "         (3) 1957-1970      (4) 1975-2014\n",
+
+                      "         HE PERIOD OF FOURTH GENERATION COMPUTER IS\n"
+                      "         (1) 1964-1975      (2) 1975-1989\n"
+                      "         (3) 1957-1970      (4) 1975-2014\n",
+
+                      "         WHAT COMPUTER ARE USED FASTEST TYPE OF COMPUTER THAT CANPERFORM COMPLEX\n"
+                      "         OPERATIONS AT VERY HIGH SPEED\n"
+                      "         (1) MICRO         (2) MINI\n"
+                      "         (3) MAINFRAME     (4) SUPER\n"
+
+                      },
+                      {
+                      "         THE STATE WHICH LEADS IN AGRICULTURAL PRODUCTION IS\n"
+                      "         (1) HARYANA       (2) PUNJAB\n"
+                      "         (3) KARNATKA      (4) TAMIL NADU\n",
+
+                      "         THE LARGEST GLAND OF HUMAN BODY\n\n"
+                      "         (1) LIVER       (2) ADRENAL\n"
+                      "         (3) PITUITARY   (4) HEART\n",
+
+                      "         IN WHICH OF THE FOLLOWING STATES IN ENGLISH THE OFFICIAL LANGUAGE\n"
+                      "         (1) ORRISA  (2) NAGALAND\n"
+                      "         (3) KERALA  (4) TRIPURA\n",
+
+                      "         THE LARGEST ORCEAN IN THE WORLD\n\n"
+                      "         (1) THE INDIA OCEAN \t     (2) B THE ANTARCTIC\n"
+                      "         (3) THE ATLANTIC OCEAN \t  (4) THE PACIFIC OCEAN\n",
+
+                      "         PUNJAB IS FAMOUS FOR\n"
+                      "         (1) NYLON TEXTILE     (2) SILK TEXTILE\n"
+                      "         (3) WOOLEN TEXTILE    (4) COTTON TEXTILE\n"
+
+                      },
+                      {
+                      "         WHICH ONE OF THE FOLLOWING GLASSES IS USED IN BULLET PROFF SCREENS\n\n"
+                      "         (1) SODA GLASS  (2) PYREX GLASS\n\n"
+                      "         (3) JENA GLASS  (4) REIFORCED\n",
+
+                      "         THE MOST POPULOUS CITY IN THE WORLD IS\n"
+                      "         (1) PARIS     (2) LONDON\n"
+                      "         (3) PEKING    (4) TOKYO\n",
+
+                      "         RED CROSS FOUNDED BY\n"
+                      "         (1) A.CURSETJI     (2) BADEL POWELL\n"
+                      "         (3) J.H.DURANT     (4) TRYGVE LIE\n",
+
+                      "         THE CHAKRA ON THE INDIAN FLAGIS IN WHAT COLOR\n"
+                      "         (1) BLACK         (2) NAVY BLUE\n"
+                      "         (3) DARK BROWN    (4) GREY\n",
+
+                      "         THE FEAR OF WHAT ANIMAL IS KNOWN AS'ARACHNOPHOBIA\n"
+                      "         (1) SPIDERS   (2) TIGER\n"
+                      "         (3) LION      (4) FISH\n"
+                      },
+                      {
+
+                      "         IN WHICH YEAR ,TERRORIST CRASH TWO PLANES INTO NEW YORK WORLD TRADE CENTR"
+                      "         ON SEPTEMBER 11 IN A SEQUENCE OF DESTRUCTION\n"
+                      "         (1) 2000          (2) 2001\n"
+                      "         (3) 2002          (4) 2003\n",
+
+                      "         IN WHICH YEAR OF FIRST WORLD WAR GERMANY DECLARED WAS ON RUSSIA AND FRANCE\n"
+                      "         (1) 1914      (2) 1915\n"
+                      "         (3) 1916      (4) 1917\n",
+
+                      "         SECOND WORLD WAR BEGAN IN\n\n"
+                      "         (1) 1931\t    (2) 1935\n"
+                      "         (3) 1981\t    (4) 1938\n",
+
+                      "         WHAT DOES HTTP STAND FOR\n"
+                      "         (1) HEAD TAIL TRANSFER PROTOCOL\n"
+                      "         (2) HYPERTEXT TRANSFER PROTOCOL\n"
+                      "         (3) HYPERTEXT TRANSFER PLOTTER\n"
+                      "         (4) HYPERTEXT TRANSFER PLOT\n",
+
+                      "         HOW MANY RINGS ON THE OLYMPIC FLAGS\n"
+                      "         (1) 4     (2) 6\n"
+                      "         (3) 5     (4) 3\n"
+
+
+                    },
+                    {
+                      "         SPECIAL TYPE OF A PROGRAM THAT LOADS AUTOMATICALLY WHEN YOU START YOUR COMPUTE\n"
+                      "         (1) MS-OFFICE     (2) INTERNET\n"
+                      "         (3) OS            (4) NONE OF THESE\n",
+
+
+                      "         WHICH INDIAN RECEIVED THE FIRST NOBEL PRIZE IN LITERATURE\n"
+                      "         (1) K.S BEDDI                 (2) ANUPAM KHERA\n"
+                      "         (3) RAVINDRA NATH TEGORE      (4) VIJAY KUMAR\n",
+
+                      "         WHICH IS THE LARGEST CITY IN THE WORLD\n"
+                      "         (1) TOKYO     (2) LONDON\n"
+                      "         (3) BANGLORE  (4) MUMBAI\n",
+
+                      "         HOW MANY LEGS DO BUTTERFLY HAVE\n"
+                      "         (1) 6     (2) 4\n"
+                      "         (3) 8     (4) 10\n",
+
+                      "         NORMAL HUMAN BLOOD PRESSURE IS\n"
+                      "         (1) 110/110   (2) 120/70\n"
+                      "         (3) 140/60    (4) 120/80\n"
+                    },
+                    {
+
+                      "         BLUETOOTH TECHNOLOGY ALLOWS\n"
+                      "         (1) STATELLITE COMMUNICATION\n"
+                      "         (2) SINGNAL TRANSMISSION ON MOBILE PHONES ONLY\n"
+                      "         (3) WIRELESS COMMUNICATION BETWEEN EQUIPMENTS\n"
+                      "         (4) LANDLINE PHONE TO MOBILE PHONE COMMUNICATION\n",
+
+                      "         WHICH IS THE LAND OF THE RISING SUN\n"
+                      "         (1) JAPAN     (2) AUSTRALIA\n"
+                      "         (3) CHINA     (4) TAIWAN\n",
+
+                      "         WHO BUILT THE RED FORT\n"
+                      "         (1) JAHANGIR      (2) AKBAR\n"
+                      "         (3) IMAM BUKHARI  (4) SHAH JAHAN\n",
+
+                      "         THE COUNTRY WHICH LOST THE LARGEST NUMBER OF PEOPLE IN THE 2ND WORLD WAR\n"
+                      "         (1) JAPHAN        (2) INDIA\n"
+                      "         (3) AUSTRALIA     (4) CHINA\n",
+
+
+                      "         THE PROCESS OF TRANSFER FILES FROM A COMPUTER ON THE\n "
+                      "         INTERNET TO YOUR COMPUTER IS CALLED"
+                      "         (1) DOWNLOADING       (2) FTP\n"
+                      "         (3) FORWARDING        (4) UPLOADING\n"
+                    },
+                    {
+
+                      "         TAJ MAJHAL IS ON THE BLANKS OF\n"
+                      "         (1) GANGA     (2) JAMUNA\n"
+                      "         (3) TAPTI     (4) CAVERY\n",
+
+                      "         WHO WAS THE FIRST INDIAN GOING IN SPACE\n"
+                      "         (1) VIKRAM AMBALEL    (2) RAVISH MALHOTRA\n"
+                      "         (3) RAKESH SHARMA     (4) NAGAPATHA BHAT\n",
+
+                      "         WHICH OF THE FOLLOWING IS A CORRECT FORMAT OF EMAIL ADDRESS\n"
+                      "         (1) care@website.m    (4) care@website@com\n"
+                      "         (3) carewebsite.com   (5) care.website.com\n",
+
+                      "         THE STATE WHICH HAS THE LARGEST NUMBER OF SUGAR MILLS IN INDIA IS\n"
+                      "         (1) BIHAR      (2) HARYANA\n"
+                      "         (3) PUNJAB     (4) UTTAR PRADESH\n",
+
+
+                      "         KALAHARI DESERT IS IN\n"
+                      "         (1) INDIA             (2) CHINA\n"
+                      "         (3) SOUTH AFARICA     (4) SAUDI ARABIA\n"
+                    },
+                    {
+
+                      "         WHEN DID MONTHER TERSA WIN THE NOBAL PEACE PRIZE\n\n"
+                      "         (1) 1975  (2) 1979\n"
+                      "         (3) 1981  (4) 1982\n",
+
+                      "         WHO ARE THE GUARDIANS OF FUNDAMENTAL RIGHTS\n"
+                      "         (1) PARLLIMENT            (2) THE PRESIDENT\n"
+                      "         (3) THE PRIME MINISTER    (4) SUPREME COUT AND HIGH COURT\n",
+
+                      "         WHO IS THE FIRST NON INDIAN TO RECEIVE THE BHARAT RATAN\n"
+                      "         (1) MARTIN LUTHAR KING        (2) MOTHER TERASA\n"
+                      "         (3) KHAN ABDUL GHAFFAR KHAN   (4) AUBIN MEHTA\n",
+
+
+                      "         FIRST UNIVERSITY IN INDIA WAS FOUNDED AT \n\n"
+                      "         (1) BUMBAY \t   (2) CHEENAI \n"
+                      "         (3) CALCUTTA\t  (4) DELHI \n",
+
+
+                      "         SEA ROUTE TO INDIA WA DISCOVERED BY\n"
+                      "         (1) COLUMBUS          (2) AMUNDSEN\n"
+                      "         (3) VASCO-DE-GAMMA    (4) WILLIAN BENTINA\n"
+
+                }};
+void fifty(int o,int i)
+{
+                    string fif[13][5]={
+                    {
+                      "         NAME OF THE NATIONAL ANTHOM OF THE INDIA\n\n"
+                      "         (1) JAN GAN MAN          (2)\n"
+                      "         (3)                      (4) BANDAY MATRAM\n\n",
+
+                      "         THE STATE WHICH HAS DESERT IN INDIA\n"
+                      "         (1) RAJASTHAN        (2)\n"
+                      "         (3)                  (4) MADHYA PRADESH\n",
+
+                      "         NAME OF THE FIRST PRIME MINISTER OF INDIA\n\n"
+                      "         (1) PANDIT JABAHAR LAL NAEHRU        (2)\n"
+                      "         (3)                                  (4) NARINDER MONDHI",
+
+                      "         WHO IS KNOWN AS FATHER OF COMPUTER\n"
+                      "         (1) CHALES BABBAGE    (2) BILL GATES\n"
+                      "         (3)                   (4)",
+
+                      "         WHICH OF THE FOLLOWING IS AN EXAMPLE OF BINARY NUMBER\n"
+                      "         (1)              (2)\n"
+                      "         (3) C 05546      (4) 100101\n"
+                      },
+
+                      {
+
+                      "         WHAT IS THE NATIONAL TREE OF THE INDIA\n"
+                      "         (1)                      (2) BANYANA TREE\n"
+                      "         (3)                      (4) NOT DECLARED\n ",
+
+                      "          THE PLANET NEAREST TO THE SUN\n"
+                      "          (1)              (2) MERCURY\n"
+                      "          (3)              (4) SATURN\n",
+
+                      "         ON THE SURFACE OF THE MOON THE WEIGHT\n "
+                      "         (1)                  (2) INCREASES\n"
+                      "         (3) DECREASE         (4) ",
+
+
+                      "         THE NATIONAL SPORT OF THE INDIA\n"
+                      "         (1)                (2) HOCKEY\n"
+                      "         (3) BADMITION      (4)",
+
+                      "         THE COLLECTION OF 8 BITS IS CALLED\n"
+                      "         (1) BYTE      (2) WORD\n"
+                      "         (3)           (4)"
+
+
+                      },
+                      {
+                      "         HOW MANY GENERATION OF COMPUTER WE HAVE\n"
+                      "         (1)          (2) 3\n"
+                      "         (3)          (4) 5\n",
+
+                      "         THE HOTTEST PLANET IN THE PLANET IN THE SOLOR\n"
+                      "         (1)            (2) VENUS\n"
+                      "         (3)            (4) JUPITER\n",
+
+                      "         ICC MEANS\n"
+                      "         (1) INDIAN CRICKET CONCIL             (2) INTERNATIONAL CRICKET CONCIL\n"
+                      "         (3)                                    (4)",
+
+
+                      "         INDIA' S FIRST SATELLITE IS NAMED AFTER\n"
+                      "         (1) ARYABHATA     (3)\n"
+                      "         (3) BHASKARA1     (4)  ",
+
+                      "         THE MAIN WORKING MEMORY USED BY THE COMPUTER ARE\n"
+                      "         (1) RAM   (2) ROM\n"
+                      "         (3)       (4)"
+
+
+                      },
+                      {
+
+                      "         THE LAGEST RIVER IN INDIA\n"
+                      "         (1)         (2)\n    "
+                      "         (3) GANGA   (4) BRAMPUTRA\n",
+
+
+                      "         THE TERM PENTIUM RELATED TO\n"
+                      "         (1)                     (2) HARD DISK\n"
+                      "         (3) MICROPROCESSOR      (4)\n",
+
+                      "         WHICH GAS IS USED FOR PREPARTIOJN OF SODA WATER\n"
+                      "         (1)             (3)\n"
+                      "         (3) HYDROGEN    (4) CARBON DYOXIDE\n",
+
+                      "         HE FIRST GENERATION COMPUTER USED____ FOR CIRCUITRY.\n"
+                      "        (1) VACUUM TUBE            (2) TRANSISTORS\n"
+                      "        (3)                        (4)\n",
+
+                      "         INDIA TEAM WINNING FIRST ODI WORLD CUP WINNING IN YEAR\n "
+                      "         (1)            (2) 1983\n"
+                      "         (3) 1985       (4)\n"
+                      },
+                      {
+                      "         THE 2014 FOOTBALL WORLD CUP IS SCHEDULED TO BE HELD IN\n"
+                      "         (1)           (3)"
+                      "         (3) JAPAN     (4) BRAZIL\n",
+
+                      "         THE GAS USED FOR MAKING VAGITABLES\n"
+                      "         (1)               (2) CARBON DIOXIDE\n"
+                      "         (3) HYDROGEN      (4)\n",
+
+                      "         THE WORLD SMALLEST COUNTRY IS\n\n"
+                      "         (1) CANADA      (2) \n"
+                      "         (3)             (4) VAOTICAN CITY\n",
+
+                      "         THE COUNTRY WITHOUT INCOME TEX IS\n"
+                      "         (1) NEPAL   (2) KUWAIT\n"
+                      "         (3)         (4) ",
+
+                      "         WHO IS THE RICHEST INDIAN ACCORDING TO THE FORBES LIST\n"
+                      "         (1) MUKESH AMBANI     (2) \n"
+                      "         (3)                   (4) ANIL AMBANI\n"
+
+                      },
+                      {
+                      "         HE PERIOD OF FIRST GENERATION COMPUTER IS\n"
+                      "         (1) 1940-1956   (2) 194-1958\n"
+                      "         (3)             (4) \n",
+
+                      "         HE PERIOD OF SECOND GENERATION COMPUTER IS\n"
+                      "         (1) 1956-1964      (2) \n"
+                      "         (3) 1957-1970      (4) \n",
+
+                      "         HE PERIOD OF THIRED GENERATION COMPUTER IS\n"
+                      "         (1) 1964-1975      (2) 1956-1963\n"
+                      "         (3)                (4) \n",
+
+                      "         HE PERIOD OF FOURTH GENERATION COMPUTER IS\n"
+                      "         (1)                (2) 1975-1989\n"
+                      "         (3)                (4) 1975-2014\n",
+
+                      "         WHAT COMPUTER ARE USED FASTEST TYPE OF COMPUTER THAT CANPERFORM COMPLEX\n"
+                      "         OPERATIONS AT VERY HIGH SPEED\n"
+                      "         (1)               (2) \n"
+                      "         (3) MAINFRAME     (4) SUPER\n"
+
+                      },
+                      {
+                      "         THE STATE WHICH LEADS IN AGRICULTURAL PRODUCTION IS\n"
+                      "         (1) HARYANA       (2) PUNJAB\n"
+                      "         (3)               (4) \n",
+
+                      "         THE LARGEST GLAND OF HUMAN BODY\n\n"
+                      "         (1) LIVER       (2) ADRENAL\n"
+                      "         (3)             (4) \n",
+
+                      "         IN WHICH OF THE FOLLOWING STATES IN ENGLISH THE OFFICIAL LANGUAGE\n"
+                      "         (1)         (2) NAGALAND\n"
+                      "         (3)         (4) TRIPURA\n",
+
+                      "         THE LARGEST ORCEAN IN THE WORLD\n\n"
+                      "         (1)                      (2) B THE ANTARCTIC\n"
+                      "         (3) THE ATLANTIC OCEAN   (4) \n",
+
+                      "         PUNJAB IS FAMOUS FOR\n"
+                      "         (1)                   (2) \n"
+                      "         (3) WOOLEN TEXTILE    (4) COTTON TEXTILE\n"
+
+                      },
+                      {
+                      "         WHICH ONE OF THE FOLLOWING GLASSES IS USED IN BULLET PROFF SCREENS\n\n"
+                      "         (1)             (2) PYREX GLASS\n\n"
+                      "         (3)             (4) REIFORCED\n",
+
+                      "         THE MOST POPULOUS CITY IN THE WORLD IS\n"
+                      "         (1)           (2) LONDON\n"
+                      "         (3)           (4) TOKYO\n",
+
+                      "         RED CROSS FOUNDED BY\n"
+                      "         (1)                (2) BADEL POWELL\n"
+                      "         (3) J.H.DURANT     (4) \n",
+
+                      "         THE CHAKRA ON THE INDIAN FLAGIS IN WHAT COLOR\n"
+                      "         (1) BLACK         (2) NAVY BLUE\n"
+                      "         (3)               (4) \n",
+
+                      "         THE FEAR OF WHAT ANIMAL IS KNOWN AS'ARACHNOPHOBIA\n"
+                      "         (1) SPIDERS   (2) \n"
+                      "         (3)           (4) FISH\n"
+                      },
+                      {
+
+                      "         IN WHICH YEAR ,TERRORIST CRASH TWO PLANES INTO NEW YORK WORLD TRADE CENTR"
+                      "         ON SEPTEMBER 11 IN A SEQUENCE OF DESTRUCTION\n"
+                      "         (1)               (2) 2001\n"
+                      "         (3)               (4) 2003\n",
+
+                      "         IN WHICH YEAR OF FIRST WORLD WAR GERMANY DECLARED WAS ON RUSSIA AND FRANCE\n"
+                      "         (1) 1914      (2) 1915\n"
+                      "         (3)           (4) \n",
+
+                      "         SECOND WORLD WAR BEGAN IN\n\n"
+                      "         (1) 1931    (2) \n"
+                      "         (3)         (4) 1938\n",
+
+                      "         WHAT DOES HTTP STAND FOR\n"
+                      "         (1) \n"
+                      "         (2) HYPERTEXT TRANSFER PROTOCOL\n"
+                      "         (3) HYPERTEXT TRANSFER PLOTTER\n"
+                      "         (4)\n",
+
+                      "         HOW MANY RINGS ON THE OLYMPIC FLAGS\n"
+                      "         (1)       (2) \n"
+                      "         (3) 5     (4) 3\n"
+
+
+                    },
+                    {
+                      "         SPECIAL TYPE OF A PROGRAM THAT LOADS AUTOMATICALLY WHEN YOU START YOUR COMPUTE\n"
+                      "         (1) MS-OFFICE     (2) \n"
+                      "         (3) OS            (4) \n",
+
+
+                      "         WHICH INDIAN RECEIVED THE FIRST NOBEL PRIZE IN LITERATURE\n"
+                      "         (1)                           (2) ANUPAM KHERA\n"
+                      "         (3) RAVINDRA NATH TEGORE      (4) \n",
+
+                      "         WHICH IS THE LARGEST CITY IN THE WORLD\n"
+                      "         (1) TOKYO     (2) \n"
+                      "         (3)           (4) MUMBAI\n",
+
+                      "         HOW MANY LEGS DO BUTTERFLY HAVE\n"
+                      "         (1) 6     (2) \n"
+                      "         (3) 8     (4) \n",
+
+                      "         NORMAL HUMAN BLOOD PRESSURE IS\n"
+                      "         (1)           (2) 120/70\n"
+                      "         (3)           (4) 120/80\n"
+                    },
+                    {
+
+                      "         BLUETOOTH TECHNOLOGY ALLOWS\n"
+                      "         (1) \n"
+                      "         (2) SINGNAL TRANSMISSION ON MOBILE PHONES ONLY\n"
+                      "         (3) WIRELESS COMMUNICATION BETWEEN EQUIPMENTS\n"
+                      "         (4) \n",
+
+                      "         WHICH IS THE LAND OF THE RISING SUN\n"
+                      "         (1) JAPAN     (2) \n"
+                      "         (3)           (4) TAIWAN\n",
+
+                      "         WHO BUILT THE RED FORT\n"
+                      "         (1)               (2) AKBAR\n"
+                      "         (3)               (4) SHAH JAHAN\n",
+
+                      "         THE COUNTRY WHICH LOST THE LARGEST NUMBER OF PEOPLE IN THE 2ND WORLD WAR\n"
+                      "         (1) JAPHAN        (2) \n"
+                      "         (3)               (4) CHINA\n",
+
+
+                      "         THE PROCESS OF TRANSFER FILES FROM A COMPUTER ON THE\n "
+                      "         INTERNET TO YOUR COMPUTER IS CALLED"
+                      "         (1) DOWNLOADING       (2) FTP\n"
+                      "         (3)                   (4)\n"
+                    },
+                    {
+
+                      "         TAJ MAJHAL IS ON THE BLANKS OF\n"
+                      "         (1)    (2) JAMUNA\n"
+                      "         (3)           (4) CAVERY\n",
+
+                      "         WHO WAS THE FIRST INDIAN GOING IN SPACE\n"
+                      "         (1)                   (2) RAVISH MALHOTRA\n"
+                      "         (3) RAKESH SHARMA     (4) \n",
+
+                      "         WHICH OF THE FOLLOWING IS A CORRECT FORMAT OF EMAIL ADDRESS\n"
+                      "         (1) care@website.m    (4) \n"
+                      "         (3) carewebsite.com   (5) \n",
+
+                      "         THE STATE WHICH HAS THE LARGEST NUMBER OF SUGAR MILLS IN INDIA IS\n"
+                      "         (1)            (2) HARYANA\n"
+                      "         (3)            (4) UTTAR PRADESH\n",
+
+
+                      "         KALAHARI DESERT IS IN\n"
+                      "         (1)                   (2) \n"
+                      "         (3) SOUTH AFARICA     (4) SAUDI ARABIA\n"
+                    },
+                    {
+
+                      "         WHEN DID MONTHER TERSA WIN THE NOBAL PEACE PRIZE\n\n"
+                      "         (1)       (2) 1979\n"
+                      "         (3) 1981  (4) \n",
+
+                      "         WHO ARE THE GUARDIANS OF FUNDAMENTAL RIGHTS\n"
+                      "         (1)                       (2) THE PRESIDENT\n"
+                      "         (3)                       (4) SUPREME COUT AND HIGH COURT\n",
+
+                      "         WHO IS THE FIRST NON INDIAN TO RECEIVE THE BHARAT RATAN\n"
+                      "         (1)                           (2) \n"
+                      "         (3) KHAN ABDUL GHAFFAR KHAN   (4) AUBIN MEHTA\n",
+
+
+                      "         FIRST UNIVERSITY IN INDIA WAS FOUNDED AT \n\n"
+                      "         (1) BUMBAY \t   (2)  \n"
+                      "         (3) CALCUTTA\t  (4)  \n",
+
+
+                      "         SEA ROUTE TO INDIA WA DISCOVERED BY\n"
+                      "         (1) COLUMBUS          (2)\n"
+                      "         (3) VASCO-DE-GAMMA    (4) \n"
+                    }
+                    };
+                    cout<<"\n"<<fif[o][i];
+                }
+
+
+
+
+char ANS[13][5]={    {'1','1','1','1','4'},
+                    {'2','2','3','2','1'},
+                    {'4','2','2','1','1'},
+                    {'3','3','3','1','2'},
+                    {'4','3','4','1','4'},
+                    {'1','1','1','2','4'},
+                    {'1','2','2','3','3'},
+                    {'2','2','2','2','1'},
+                    {'2','1','4','2','5'},
+                    {'3','3','1','1','4'},
+                    {'3','1','4','1','1'},
+                    {'2','3','1','4','3'},
+                    {'2','4','3','1','3'}
+                };
+
+int  aud(int o,int i)
+{
+    string aud1[13][5]={{" (1) 45%     (2) 30%\n"
+                        " (3) 20%     (4) 5%\n",
+
+                        "(1) 60%    (2) 15%\n"
+                        "(3) 10%    (4) 15%\n",
+
+                        "(1) 50%    (2) 10%\n"
+                        "(3) 30%    (4) 10%\n",
+
+                        "(1) 50%    (2) 10%\n"
+                        "(3) 20%    (4) 20%\n",
+
+                        "(1) 10%      (2) 10%\n"
+                        "(3) 20%      (4) 60%\n"
+    },
+                     {
+                        "(1) 20%     (2) 40%\n"
+                        "(3) 10%     (4) 10%\n",
+
+                        "(1) 20%    (2)50%\n"
+                        "(3) 10%    (4)10%\n",
+
+                        "(1) 10%    (2) 25%\n"
+                        "(3) 40%    (4) 25% \n",
+
+                        "(1) 25%     (2) 25%\n"
+                        "(3) 30%     (4) 30%\n",
+
+                        "(1) 70%    (2) 10%\n"
+                        "(3) 10%    (4) 10%\n"
+                    },
+                    {
+                        "(1) 20%    (2) 0%\n"
+                        "(3) 0%     (4) 80%\n",
+
+                        "(1) 40%    (2) 45%\n"
+                        "(3) 10%    (4) 5%\n",
+
+                        "(1) 40%    (2) 45%\n"
+                        "(3) 10%    (4) 5%\n",
+
+                        "(1) 25%    (2) 30%\n"
+                        "(3) 30%    (4) 15%\n",
+
+                        "(1) 35%    (2) 15%\n"
+                        "(3) 25%    (4) 25%\n"
+                    },
+                    {
+                        "(1) 30%    (2) 40%\n"
+                        "(3) 20%    (4) 10%\n",
+
+                        "(1) 30%    (2) 30%\n"
+                        "(3) 20%    (4) 20%\n",
+
+                        "(1) 30%    (2) 20%\n"
+                        "(3) 40%    (4) 10%\n",
+
+                        "(1) 30%    (2) 30%\n"
+                        "(3) 40%    (4) 10%\n",
+
+                        "(1) 30%    (2) 20%\n"
+                        "(3) 40%    (4) 10%\n"
+                    },
+                    {
+                        "(1) 30%    (2) 20%\n"
+                        "(3) 40%    (4) 10%\n",
+
+                        "(1) 10%    (2) 20%\n"
+                        "(3) 50%    (4) 20%\n",
+
+                        "(1) 30%    (2) 20%\n"
+                        "(3) 10%    (4) 40%\n",
+
+                        "(1) 30%    (2) 30%\n"
+                        "(3) 40%    (4) 10%\n",
+
+                        "(1) 30%    (2) 15%\n"
+                        "(3) 10%    (4) 45%\n"
+                    },
+                    {
+                        "(1) 40%    (2) 20%\n"
+                        "(3) 30%    (4) 10%\n",
+
+                        "(1) 40%    (2) 20%\n"
+                        "(3) 10%    (4) 30%\n",
+
+                        "(1) 30%    (2) 20%\n"
+                        "(3) 10%    (4) 40%\n",
+
+                        "(1) 30%    (2) 40%\n"
+                        "(3) 30%    (4) 10%\n",
+
+                        "(1) 30%    (2) 15%\n"
+                        "(3) 10%    (4) 45%\n"
+                    },
+                    {
+                        "(1) 40%    (2) 20%\n"
+                        "(3) 30%    (4) 10%\n",
+
+                        "(1) 10%    (2) 20%\n"
+                        "(3) 50%    (4) 20%\n",
+
+                        "(1) 30%    (2) 20%\n"
+                        "(3) 10%    (4) 40%\n",
+
+                        "(1) 30%    (2) 30%\n"
+                        "(3) 40%    (4) 10%\n",
+
+                        "(1) 30%    (2) 15%\n"
+                        "(3) 10%    (4) 45%\n"
+                    },
+                    {
+                        "(1) 40%    (2) 20%\n"
+                        "(3) 30%    (4) 10%\n",
+
+                        "(1) 10%    (2) 20%\n"
+                        "(3) 50%    (4) 20%\n",
+
+                        "(1) 30%    (2) 50%\n"
+                        "(3) 20%    (4) 10%\n",
+
+                        "(1) 30%    (2) 30%\n"
+                        "(3) 40%    (4) 10%\n",
+
+                        "(1) 30%    (2) 15%\n"
+                        "(3) 30%    (4) 25%\n"
+                    },
+                    {
+                        "(1) 20%    (2) 40%\n"
+                        "(3) 30%    (4) 10%\n",
+
+                        "(1) 10%    (2) 50%\n"
+                        "(3) 50%    (4) 20%\n",
+
+                        "(1) 20%    (2) 10%\n"
+                        "(3) 20%    (4) 50%\n",
+
+                        "(1) 30%    (2) 30%\n"
+                        "(3) 40%    (4) 10%\n",
+
+                        "(1) 30%    (2) 15%\n"
+                        "(3) 30%    (4) 25%\n"
+                    },
+                    {
+                        "(1) 30%    (2) 20%\n"
+                        "(3) 40%    (4) 10%\n",
+
+                        "(1) 10%    (2) 50%\n"
+                        "(3) 50%    (4) 20%\n",
+
+                        "(1) 50%    (2) 30%\n"
+                        "(3) 20%    (4) 10%\n",
+
+                        "(1) 30%    (2) 30%\n"
+                        "(3) 40%    (4) 10%\n",
+
+                        "(1) 30%    (2) 15%\n"
+                        "(3) 30%    (4) 25%\n"
+                    },
+                    {
+                        "(1) 30%    (2) 20%\n"
+                        "(3) 40%    (4) 10%\n",
+
+                        "(1) 50%    (2) 50%\n"
+                        "(3) 10%    (4) 20%\n",
+
+                        "(1) 30%    (2) 10%\n"
+                        "(3) 20%    (4) 50%\n",
+
+                        "(1) 30%    (2) 30%\n"
+                        "(3) 40%    (4) 10%\n",
+
+                        "(1) 30%    (2) 15%\n"
+                        "(3) 30%    (4) 25%\n"
+                    },
+                    {
+                        "(1) 30%    (2) 40%\n"
+                        "(3) 30%    (4) 0%\n"
+
+                        "(1) 0%    (2) 50%\n"
+                        "(3) 50%    (4) 0%\n"
+
+                        "(1) 30%    (2) 50%\n"
+                        "(3) 20%    (4) 10%\n"
+
+                        "(1) 10%    (2) 30%\n"
+                        "(3) 10%    (4) 50%\n"
+
+                        "(1) 30%    (2) 15%\n"
+                        "(3) 30%    (4) 25%\n"
+                    },
+                    {
+                        "(1) 20%    (2) 40%\n"
+                        "(3) 30%    (4) 10%\n",
+
+                        "(1) 10%    (2) 10%"
+                        "(3) 50%    (4) 40%",
+
+                        "(1) 30%    (2) 30%\n"
+                        "(3) 30%    (4) 10%\n",
+
+                        "(1) 30%    (2) 30%\n"
+                        "(3) 40%    (4) 10%\n",
+
+                        "(1) 30%    (2) 15%\n"
+                        "(3) 30%    (4) 25%\n"
+                    }
+        };
+                    cout<<aud1[o][i];
+}
+
+int  expert(int o,int i)
+{
+    int p;
+
+    int exp[13][5]={{1,1,1,1,4},
+                    {4,1,3,3,1},
+                    {4,2,3,1,3},
+                    {3,3,3,3,3},
+                    {2,3,2,1,1},
+                    {1,1,3,2,3},
+                    {1,2,4,3,3},
+                    {2,1,2,5,1},
+                    {2,1,4,2,3},
+                    {3,3,1,1,4},
+                    {3,3,4,1,1},
+                    {1,3,3,4,2},
+                    {1,3,3,1,3}
+                };
+                p=exp[o][i];
+                return(p);
+}
+void display()
+{
+    cout<<"\n\n\n\n\n\n\n\t\t\t\tPLEASE WAIT";
+     for(int i=0;i<4;i++)
+     {
+         Sleep(500);
+         cout<<".";
+     }
+
+
+ system("cls");
+ cout<<"********************************************************************************"
+            "\n \tKAUN BANEGA KARORPATI ME APP KA SABAGAT HAI\n"
+            "********************************************************************************";
+            cout<<"PRICE CHART";
+    cout<<"\n--------------------\n";
+    if(o>=1)
+        cout<<"|                  |\n" ;
+    if(o<1)
+        cout<<"| 1  | RS "<<price[0]<<"     |\n";
+
+    if(o<2)
+        cout<<"| 2  | RS "<<price[1]<<"     |\n";
+    if(o>=2)
+        cout<<"|                  |\n" ;
+
+    if(o<3 )
+        cout<<"| 3  | RS "<<price[2]<<"    |\n";
+    if(o>=3 )
+         cout<<"|                  |\n" ;
+
+    if(o<4)
+        cout<<"| 4  | RS "<<price[3]<<"    |\n";
+
+    if(o>=4)
+         cout<<"|                  |\n" ;
+
+    if(o<5)
+        cout<<"| 5  | RS "<<price[4]<<"    |\n";
+
+    if(o>=5)
+       cout<<"|                  |\n" ;
+
+    if(o<6)
+         cout<<"| 6  | RS "<<price[5]<<"   |\n";
+    if(o>=6)
+        cout<<"|                  |\n" ;
+
+    if(o<7)
+        cout<<"| 7  | RS "<<price[6]<<"   |\n";
+    if(o>=7)
+        cout<<"|                  |\n" ;
+
+    if(o<8)
+        cout<<"| 8  | RS "<<price[7]<<"  |\n";
+    if(o>=8)
+         cout<<"|                  |\n" ;
+
+    if(o<9)
+        cout<<"| 9  | RS "<<price[8]<<"  |\n";
+    if(o>=9)
+        cout<<"|                  |\n" ;
+
+    if(o<10)
+         cout<<"| 10 | RS "<<price[9]<<"  |\n";
+    if(o>=10)
+         cout<<"|                  |\n" ;
+
+    if(o<11)
+         cout<<"| 11 | RS "<<price[10]<<" |\n";
+
+    if(o>=11)
+         cout<<"|                  |\n" ;
+
+    if(o<12)
+         cout<<"| 12 | RS "<<price[11]<<" |\n";
+
+    if(o>=12)
+         cout<<"|                  |\n" ;
+
+    if(o<13)
+         cout<<"| 13 | RS "<<price[12]<<" |\n";
+    if(o>=13)
+         cout<<"|                  |\n" ;
+    cout<<"--------------------";
+
+}
+char check(int o,int i)
+{
+
+
+    int P;
+    char answer;
+    cout<<"\n\nPLEASE ENTER YOUR ANSWER =";
+    back:
+    answer=getche();
+    if(answer=='0')
+    {
+        return 0;
+    }
+    if(ANS[o][i]==answer)
+    {
+        cout<<"\n\nCONGRATULATION APP KA ANSER BILCUL THEEAK HAI\n";
+        cout<<"\t\t\t\t\t\t\tNEXT QUESTION IS";
+        return 1;
+
+    }
+    else if(answer=='1' || answer=='2' || answer=='3' || answer=='4' )
+    {
+         cout<<"\n\nWRONG ANSWER";
+         cout<<"\nRIGHT ANSWER IS OPTION ("<<ANS[o][i]<<")";
+         s++;
+         return 2;
+    }
+    else
+    {
+        cout<<"\nIT IS INVALID PLEASE TRY AGAIN";
+        goto back;
+
+    }
+
+}
+
+int lifeline()
+{
+    system("cls");
+        char l;
+                    cout<<"\n________________________________________________________________________________\n"
+                        "             APP IN SAAB ME SE KAUN SEE LIFELINE CHUN NA CHAHTE HAI\n"
+                        "________________________________________________________________________________ \n";
+                    cout<<"--------------------------------------\n";
+    if(a==0)
+    {
+             cout<<"|SELECT ODIENCE POLL| PLEASE ENTER |1|\n";
+              cout<<"--------------------------------------\n";
+    }
+
+    if(b==0)
+    {
+          cout<<"--------------------------------------\n";
+             cout<<"|SELECT EXPERT  RAY | PLEASE ENTER |2|\n";
+               cout<<"--------------------------------------\n";
+    }
+
+    if(de==0)
+    {
+        cout<<"--------------------------------------\n";
+          cout<<"|SELECT 50 50       | PLEASE ENTER |3|\n";
+    }
+
+        cout<<"--------------------------------------\n";
+    cout<<"\nPLEASE ENTER YOUR CHOICE=";
+    back:
+    l=getche();
+    if(l=='1'  || l=='2' || l=='3')
+          return(l);
+       else
+        {
+                cout<<"\nIT ISNOT VALID PLEASE TRY AGAIN ";
+                goto back;
+        }
+
+}
+int main()
+{
+
+    for(int j=0;s==0;j++)
+    {
+         restart1:
+        time_t now = time(0);
+        tm *ltm = localtime(&now);
+            /* initialize random seed: */
+        srand (ltm->tm_sec);
+
+            /* generate secret number between 1 and 10: */
+            i= rand() % 5;
+            int d=0;
+            back:
+                display();
+                cout<<"\n\n"<<o+1<<" SAWAL "<<price[o]<<" RUPEES KE LIYE\n ";
+                        cout<<"_______________________________________________________________________________"
+                                <<"          "<<endl<<q[o][i]
+                                <<"\n________________________________________________________________________________";
+
+          cout<<"\nSELECT FIRST  OPTION  PRESS 1\n"
+          "SELECT SECOND OPTION  PRESS 2\n"
+          "SELECT THIRED OPTION  PRESS 3\n"
+          "SELECT FOURTH OPTION  PRESS 4\n";
+          cout<<"\n\t\t\t------------------------------------\n"
+                "\t\t\t|SELECT THE ANY LIFE LINE  PRESS 0 |\n";
+          cout<<"\t\t\t------------------------------------\n";
+
+          char c;
+
+
+        c=check(o,i);
+        if(c==0)
+        {
+            int life;
+            life=lifeline();
+                if(life=='1' && a==0 )
+                {
+                    system("cls");
+                    display();
+                    cout<<"\n\n"<<o+1<<" SAWAL "<<price[o]<<" RUPEES KE LIYE\n \n";
+                    cout<<"_______________________________________________________________________________"
+                        <<"          "<<endl<<q[o][i]
+                        <<"\n________________________________________________________________________________";
+
+                    cout<<"\nOUDIENSE ANSWER IN PERCENTAGE\n";
+                    aud(o,i);
+                    cout<<"\nSELECT FIRST  OPTION  PRESS 1\n"
+                                    "SELECT SECOND OPTION  PRESS 2\n"
+                                    "SELECT THIRED OPTION  PRESS 3\n"
+                                    "SELECT FOURTH OPTION  PRESS 4\n";
+                    cout<<"\n\t\t\t------------------------------------\n"
+                            "\t\t\t|SELECT THE ANY LIFE LINE  PRESS 0 |\n";
+                    cout<<"\t\t\t------------------------------------\n";
+                    d=check(o,i);
+                    a++;
+                }
+
+                else if(life=='2' && b==0)
+                {
+                    int e;
+                    system("cls");
+                    display();
+                    cout<<"\n\n"<<o+1<<" SAWAL "<<price[o]<<" RUPEES KE LIYE\n \n";
+                    cout<<"_______________________________________________________________________________"
+                        <<"          "<<endl<<q[o][i]
+                        <<"\n________________________________________________________________________________";
+
+                    e=expert(o,i);
+                    cout<<"\n\nEXPERT RAY IS OPTION=("<<e<<")";
+                    cout<<"\nSELECT FIRST  OPTION  PRESS 1\n"
+                            "SELECT SECOND OPTION  PRESS 2\n"
+                            "SELECT THIRED OPTION  PRESS 3\n"
+                            "SELECT FOURTH OPTION  PRESS 4\n";
+                    cout<<"\n\t\t\t------------------------------------\n"
+                            "\t\t\t|SELECT THE ANY LIFE LINE  PRESS 0 |\n";
+                    cout<<"\t\t\t------------------------------------\n";
+                    d=check(o,i);
+                    b++;
+                }
+                else if(life=='3' && de==0)
+                {
+
+                    system("cls");
+                    display();
+
+                    cout<<"\n\n"<<o+1<<" SAWAL "<<price[o]<<" RUPEES KE LIYE\n \n";
+                    fifty(o,i);
+                    cout<<"\nSELECT FIRST  OPTION  PRESS 1\n"
+                            "SELECT SECOND OPTION  PRESS 2\n"
+                            "SELECT THIRED OPTION  PRESS 3\n"
+                            "SELECT FOURTH OPTION  PRESS 4\n";
+                    cout<<"\n\t\t\t------------------------------------\n"
+                            "\t\t\t|SELECT THE ANY LIFE LINE  PRESS 0 |\n";
+                    cout<<"\t\t\t------------------------------------\n";
+                    d=check(o,i);
+                    de++;
+                }
+        }
+    if(o==14)
+    {
+        cout<<"\nYOU ARE WINNER OF KBC APP NE JITE HAI | "<<price[o-1]<<" |";
+    }
+   if(c==1 || d==1)
+   {
+        o++;
+        goto back;
+   }
+
+    else
+    {
+          cout<<"\n\n\n APP KBC SE JEET KE LIJA RAHI HAI "<<price[o-1]<<" RS\n\n\n00000000";
+          char restart;
+          Sleep(3000);
+           system("cls");
+          cout<<"\n\n\n\n\t\t\t---------------------------------\n"
+          "\t\t\t|RESTART THE GAME PLEASE PRESS 5|"
+          "\n\t\t\t---------------------------------\n";
+          restart=getche();
+          if(restart=='5')
+          {
+                 o=0;
+
+               goto restart1;
+          }
+
+          else
+            exit(0);
+
+    }
+
+
+}
+}
+
