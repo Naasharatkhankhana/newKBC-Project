@@ -1,0 +1,895 @@
+<html>
+
+<head>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <style>
+        .background
+         {
+            background-image: url('images/kb2.jpg');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+             
+    </style>
+</head>
+
+<body class="background">
+    <audio src="sound/time.m43" id="audio1" autoplay="true"></audio>
+    <audio src="sound/new1.mp3" id="audio2" autoplay="true"></audio>
+    <audio src="sound/theme.mp3" autoplay="true"></audio>
+    <audio src="sound/winner.mp3" id="audio3" autoplay="true"></audio>
+    <audio src="sound/idea.mp3" id="audio4" autoplay="true"></audio>
+    <audio src="sound/50.mp3" id="audio5" autoplay="true"></audio>
+    <div class="head">
+        <div class="ruppes" id="rupees">
+        </div>
+        <table class="lifeline">
+            <tr>
+                <td style="margin-left:70px"><button class="lifeImg" onclick="fiftyfifty()"><img src="images/k12.jpg"id="l1"></button></td>
+             
+                <td><button class="lifeImg" onclick="oudienss()"><img src="images/l1.png" id="l3"></td></button>
+                <td><button class="lifeImg" onclick="questionChange()"><img src="images/c1.png"id="l4"></td></button>
+                <td><button class="lifeImg" onclick="pof()"><img src="images/f14.jpg"id="l2"></button></td>
+     </tr>
+        </table>
+        <div class="main">
+            <div class="left" id="show" style="background-image:url('images/l2.jpg')">
+                <div id="hadding"></div>
+                <center>
+                    <table id="myTable"></table>
+                </center>
+
+            </div>
+
+            <div class="mid" id="mid1">
+
+                <video autoplay muted id="background">
+        <source src="video/2.mp4" type="video/mp4">
+    </video>
+            </div>
+
+            <div class="right">
+                <table class="price" border="2px" bordercolor="white">
+                    <tr id="ta14">
+                        <td>14</td>
+                        <td id="q14">Rs 7,00,00,000</td>
+                    </tr>
+                    <tr id="ta13">
+                        <td style="width:30px">13</td>
+                        <td id="q13">Rs 3,00,00,000 </td>
+                    </tr>
+                    <tr id="ta12">
+                        <td>12</td>
+                        <td id="q12" style="width:130px;">Rs 1,00,00,000</td>
+                    </tr>
+                    <tr id="ta11">
+                        <td>11</td>
+                        <td id="q11">Rs 50,00,000</td>
+                    </tr>
+                    <tr id="ta10">
+                        <td>10</td>
+                        <td id="q10">Rs 25,00,000</td>
+                    </tr>
+                    <tr id="ta9">
+                        <td>9</td>
+                        <td id="q9">Rs 15,00,000</td>
+                    </tr>
+                    <tr id="ta8">
+                        <td>8</td>
+                        <td id="q8">Rs 6,40,000</td>
+                    </tr>
+                    <tr id="ta7">
+                        <td>7</td>
+                        <td id="q7">Rs 3,20,000</td>
+                    </tr>
+                    <tr id="ta6">
+                        <td>6</td>
+                        <td id="q6">Rs 1,60,000</td>
+                    </tr>
+                    <tr id="ta5">
+                        <td>5</td>
+                        <td id="q5">Rs 80000</td>
+                    </tr>
+                    <tr id="ta4">
+                        <td>4</td>
+                        <td id="q4">Rs 40000</td>
+                    </tr>
+                    <tr id="ta3">
+                        <td>3</td>
+                        <td id="q3">Rs 20000</td>
+                    </tr>
+                    <tr id="ta2">
+                        <td>2</td>
+                        <td id="q2">Rs 10000</td>
+                    </tr>
+                    <tr id="ta1">
+                        <td>1</td>
+                        <td id="q1">Rs 5000</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="question" id="qq"></div>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <table class="option">
+                            <tr>
+                                <td style="margin-left:180px"><button id="t1" onclick="check(1)">
+                                    <table><tr style="width:30px" ><td  style="color:yellow"><b>A:</b></td>
+                                    <td id="b1" style="width:170px;color:white;font-size:13px"></td></tr></table></button></td>
+                            </tr>
+                            <tr>
+                                <td><button id="t3" onclick="check(3)"><table><tr style="width:30px"><td style="color:yellow"><b>C:</b>
+                                </td><td id="b3" style="width:170px;color:white;font-size:13px""></td></tr></table></button></td>
+                                </button>
+                    </td>
+                    </tr>
+                    </table>
+                    </td>
+                    <td>
+                        <table style="float:left">
+                            <tr>
+                                <td><button class="time2" onclick="start()"><img id="time" src="images/s5.jpg"></button></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table style="margin:0px" class="option">
+                            <tr>
+                                <td> <button id="t2" onclick="check(2)"><table><tr  style="width:30px"><td style="color:yellow"><b>B:</b></td>
+                                <td id="b2"style="width:170px;color:white;font-size:13px""></td></tr></table></button></td>
+                                </button>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td> <button id="t4" onclick="check(4)"><table><tr style="width:30px"><td style="color:yellow"><b>D:</b></td>
+                                <td id="b4" style="width:170px;color:white;font-size:13px""></td></tr></table></button></td>
+                        </button>
+                        </td>
+                    </tr>
+                    </table>
+                    </td>
+                </tr>
+            </table>
+
+
+
+        </div>
+    </div>
+
+    </div>
+
+    <script>
+        var i=0,x,myVar,ar=0,j=0,k=0,chance=0,rup=0,qc=0,f1=-1,f2=-1,ff=0,qu=0;
+        var friendAnswer=0,phf1=0,total=0,oudi1=0,oudi2=0,oudi3=0,oudi4=0,start1=0,oc=0,rup2=0;
+                  
+                      var que=[["NAME OF THE NATIONAL ANTHOM OF THE INDIA",
+                      "         THE STATE WHICH HAS DESERT IN INDIA",
+                      "         NAME OF THE FIRST PRIME MINISTER OF INDIA",
+                      "         WHO IS KNOWN AS FATHER OF COMPUTER",
+                      "         WHICH OF THE FOLLOWING IS AN EXAMPLE OF BINARY NUMBER"
+                      ],
+
+                     [ "         WHAT IS THE NATIONAL TREE OF THE INDIA",                     
+                      "          THE PLANET NEAREST TO THE SUN",          
+                      "         ON THE SURFACE OF THE MOON THE WEIGHT",            
+                      "         THE NATIONAL SPORT OF THE INDIA",                   
+                      "         THE COLLECTION OF 8 BITS IS CALLED"                     
+                     ],
+                      [
+                      "         HOW MANY GENERATION OF COMPUTER WE HAVE",                   
+                      "         THE HOTTEST PLANET IN THE PLANET IN THE SOLOR",
+                      "         ICC MEANS" ,                
+                      "         INDIA' S FIRST SATELLITE IS NAMED AFTER",                    
+                      "         THE MAIN WORKING MEMORY USED BY THE COMPUTER ARE"                     
+                      ],
+                      [
+
+                      "         THE LAGEST RIVER IN INDIA",                     
+                      "         THE TERM PENTIUM RELATED TO",                   
+                      "         WHICH GAS IS USED FOR PREPARTIOJN OF SODA WATER",                     
+                      "         HE FIRST GENERATION COMPUTER USED____ FOR CIRCUITRY." ,                   
+                      "         INDIA TEAM WINNING FIRST ODI WORLD CUP WINNING IN YEAR"      
+                      ],
+                      [
+                      "         THE 2014 FOOTBALL WORLD CUP IS SCHEDULED TO BE HELD IN",                     
+                      "         THE GAS USED FOR MAKING VAGITABLES",                  
+                      "         THE WORLD SMALLEST COUNTRY IS",                     
+                      "         THE COUNTRY WITHOUT INCOME TEX IS" ,                    
+                      "         WHO IS THE RICHEST INDIAN ACCORDING TO THE FORBES LIST"                     
+
+                      ],
+                      [
+                      "         HE PERIOD OF FIRST GENERATION COMPUTER IS",                    
+                      "         HE PERIOD OF SECOND GENERATION COMPUTER IS",                    
+                      "         HE PERIOD OF THIRED GENERATION COMPUTER IS",                   
+                      "         HE PERIOD OF FOURTH GENERATION COMPUTER IS",                    
+                      "         WHAT COMPUTER ARE USED FASTEST TYPE OF COMPUTER THAT CANPERFORM COMPLEX",
+                      "         OPERATIONS AT VERY HIGH SPEED"
+                      ],
+                      [
+                      "         THE STATE WHICH LEADS IN AGRICULTURAL PRODUCTION IS",                   
+                      "         THE LARGEST GLAND OF HUMAN BODY",                    
+                      "         IN WHICH OF THE FOLLOWING STATES IN ENGLISH THE OFFICIAL LANGUAGE",                     
+                      "         THE LARGEST ORCEAN IN THE WORLD",                   
+                      "         PUNJAB IS FAMOUS FOR"                     
+                      ],
+                      [
+                      "         WHICH ONE OF THE FOLLOWING GLASSES IS USED IN BULLET PROFF SCREENS",                 
+                      "         THE MOST POPULOUS CITY IN THE WORLD IS",       
+                      "         RED CROSS FOUNDED BY",                    
+                      "         THE CHAKRA ON THE INDIAN FLAGIS IN WHAT COLOR",                    
+                      "         THE FEAR OF WHAT ANIMAL IS KNOWN AS'ARACHNOPHOBIA"          
+                      ],
+                      [
+
+                      "         IN WHICH YEAR ,TERRORIST CRASH TWO PLANES INTO NEW YORK WORLD TRADE CENTR",
+                      "         ON SEPTEMBER 11 IN A SEQUENCE OF DESTRUCTION",                    
+                      "         IN WHICH YEAR OF FIRST WORLD WAR GERMANY DECLARED WAS ON RUSSIA AND FRANCE",                   
+                      "         SECOND WORLD WAR BEGAN IN",                    
+                      "         WHAT DOES HTTP STAND FOR",                     
+                      "         HOW MANY RINGS ON THE OLYMPIC FLAGS"                   
+                    ],
+                    [
+                      "         SPECIAL TYPE OF A PROGRAM THAT LOADS AUTOMATICALLY WHEN YOU START YOUR COMPUTE",                    
+                      "         WHICH INDIAN RECEIVED THE FIRST NOBEL PRIZE IN LITERATURE", 
+                      "         WHICH IS THE LARGEST CITY IN THE WORLD",                     
+                      "         HOW MANY LEGS DO BUTTERFLY HAVE",                    
+                      "         NORMAL HUMAN BLOOD PRESSURE IS"                      
+                    ],
+                    [
+
+                      "         BLUETOOTH TECHNOLOGY ALLOWS",                     
+                      "         WHICH IS THE LAND OF THE RISING SUN",                    
+                      "         WHO BUILT THE RED FORT",                      
+                      "         THE COUNTRY WHICH LOST THE LARGEST NUMBER OF PEOPLE IN THE 2ND WORLD WAR",                    
+                      "         THE PROCESS OF TRANSFER FILES FROM A COMPUTER ON THE ",
+                      "         INTERNET TO YOUR COMPUTER IS CALLED"            
+                    ],
+                    [
+
+                      "         TAJ MAJHAL IS ON THE BLANKS OF",                    
+                      "         WHO WAS THE FIRST INDIAN GOING IN SPACE",                    
+                      "         WHICH OF THE FOLLOWING IS A CORRECT FORMAT OF EMAIL ADDRESS",                   
+                      "         THE STATE WHICH HAS THE LARGEST NUMBER OF SUGAR MILLS IN INDIA IS",                    
+                      "         KALAHARI DESERT IS IN"                     
+                    ],
+                    [
+
+                      "         WHEN DID MONTHER TERSA WIN THE NOBAL PEACE PRIZE", 
+                      "         WHO ARE THE GUARDIANS OF FUNDAMENTAL RIGHTS",
+                      "         WHO IS THE FIRST NON INDIAN TO RECEIVE THE BHARAT RATAN",                     
+                      "         FIRST UNIVERSITY IN INDIA WAS FOUNDED AT",                   
+                      "         SEA ROUTE TO INDIA WA DISCOVERED BY"                     
+
+                ]];
+                var opt1=[[" JAN GAN MAN "," MAA TUJHE SALAM"," DIL HAI HINDOSTANI","BANDAY MATRAM"],
+                          [" RAJASTHAN "," PUNJAB"," UTTAR PRADESH ","  MADHYA PRADESH"] ,
+                          [" PANDIT JABAHAR LAL NAEHRU "," INDRA GANDHI"," RAJIV GANDHI "," NARINDER MONDHI"],
+                          [" CHALES BABBAGE"," BILL GATES"," R.P MISHRA"," SABEER BHATIA"],
+                          [" WIBFD3 "," 45364"," 05546"," 100101"],
+                          [" HE MANGO TREE "," BANYANA TREE"," THE COCONUT TREE","NOT DECLARED"],
+                          [" VENUS "," MERCURY"," JUPITER"," SATURN"],
+                          [" REMAIN THE SAME "," INCREASES"," DECREASE","MAY OR MAY NOT INCREASE"],
+                          [" CRICKET"," HOCKEY"," BADMITION"," NONE OF THESE"],
+                          [" BYTE"," WORD"," RECORD"," ALL THE ABOVE"],
+                          [" 6 "," 3"," 4 "," 5"],
+                          [" EARTH "," VENUS"," MARS"," JUPITER"],
+                          [" INDIAN CRICKET CONCIL"," INTERNATIONAL CRICKET CONCIL"," INTERNATIONAL COUNTRY CONCIL"," NONE OF THESE"],
+                          [" ARYABHATA"," BHASKARA2"," BHASKARA1"," ALBERT EINSTAIN"],
+                          [" RAM"," ROM"," DVD"," CD"],                       
+                          [" YAMUNA"," KAVERI"," GANGA"," BRAMPUTRA"],
+                          [" DVD "," HARD DISK"," MICROPROCESSOR"," MOUSE"],
+                          [" OXYGEN "," AMMONTA"," HYDROGEN "," CARBON DYOXIDE"],
+                          [" VACUUM TUBE"," TRANSISTORS"," INTEGRATED CIRCUITS"," LARGE SCALE ITEGRATION"],
+                          [" 2015"," 1983"," 2011 "," 2007"],
+                          [" CHINA "," AUSTRALIA"," JAPAN  "," BRAZIL"],
+                          [" OXYGEN  "," CARBON DIOXIDE"," HYDROGEN"," NITROGEN"],
+                          [" CANADA"," RUSSIA"," MALDIVES "," VAOTICAN CITY"],
+                          [" NEPAL"," KUWAIT"," BURMA"," SINGAPORE"],                               
+                          [" MUKESH AMBANI "," LAKSHMI MITTAL"," SACHIN TENDULKAR "," ANIL AMBANI"],
+                          [" 1940-1956"," 1940-1958"," 1930-1960"," 1960-2000"],
+                          [" 1956-1964"," 1956-1963"," 1957-1970"," 1975-2014"],
+                          [" 1964-1975"," 1956-1963"," 1957-1970"," 1975-2014"],
+                          [" 1964-1975"," 1975-1989"," 1957-1970 "," 1975-2014"],                    
+                          [" MICRO "," MINI"," MAINFRAME"," SUPER"],
+                          [" HARYANA "," PUNJAB"," KARNATKA "," TAMIL NADU"],
+                          [" LIVER"," ADRENAL"," PITUITARY"," HEART"],
+                          [" ORRISA "," NAGALAND"," KERALA"," TRIPURA"],                      
+                          [" THE INDIA OCEAN "," THE ANTARCTIC","  THE ATLANTIC OCEAN"," THE PACIFIC OCEAN"],
+                          [" NYLON TEXTILE"," SILK TEXTILE"," WOOLEN TEXTILE  "," COTTON TEXTILE"],
+                          [" SODA GLASS"," PYREX GLASS"," JENA GLASS "," REIFORCED"],
+                          [" PARIS "," LONDON"," PEKING"," TOKYO"],
+                          [" A.CURSETJI"," J.H.DURANT  "," TRYGVE LIE"," A.P.J.SINGH"],
+                          [" BLACK  "," NAVY BLUE"," DARK BROWN"," GREY"],
+                          [" SPIDERS"," TIGER"," LION  "," FISH"],
+                          [" 2000 "," 2001"," 2002 "," 2003"],
+                          [" 1914"," 1915"," 1916  "," 1917"],
+                          [" 1931"," 1935"," 1981"," 1938"],               
+                          [" HEAD TAIL TRANSFER PROTOCOL"," HYPERTEXT TRANSFER PROTOCOL"," HYPERTEXT TRANSFER PLOTTER"," HYPERTEXT TRANSFER PLOT"],
+                          [" 4 "," 6"," 5"," 3"],
+                          [" MS-OFFICE","  INTERNET"," OS"," NONE OF THESE"],
+                          [" K.S BEDDI"," ANUPAM KHERA"," RAVINDRA NATH TEGORE "," VIJAY KUMAR"],
+                          [" TOKYO"," LONDON"," BANGLORE"," MUMBAI"],
+                          [" 6"," 4"," 8"," 10"],                      
+                          [" 110/110 "," 120/70"," 140/60"," 120/80"],                                                 
+                          [" STATELLITE COMMUNICATION"," SINGNAL TRANSMISSION ON MOBILE PHONES ONLY","  WIRELESS COMMUNICATION BETWEEN EQUIPMENTS"," None ofthese"],                                         
+                          [" JAPAN"," AUSTRALIA"," CHINA"," AIWAN"],
+                          [" JAHANGIR "," AKBAR"," IMAM BUKHARI"," SHAH JAHAN"],
+                          [" JAPHAN "," INDIA"," AUSTRALIA "," CHINA"],
+                          [" DOWNLOADING  "," FTP"," FORWARDING"," UPLOADING"],
+                          [" GANGA"," JAMUNA"," TAPTI "," CAVERY"],                                                                                   
+                          [" VIKRAM AMBALEL"," RAVISH MALHOTRA"," RAKESH SHARMA "," NAGAPATHA BHAT"],
+                          [" care@website.m"," care@website@com"," carewebsite.com "," care.website.com"],
+                          [" BIHAR","  HARYANA"," PUNJAB  "," UTTAR PRADESH"],
+                          [" INDIA"," CHINA"," SOUTH AFARICA"," SAUDI ARABIA"],           
+                          [" 1975 "," 1979"," 1981 ","  1982"],
+                          [" PARLLIMENT   "," THE PRESIDENT"," THE PRIME MINISTER "," SUPREME COUT AND HIGH COURT"],
+                          [" MARTIN LUTHAR KING ","  MOTHER TERASA"," KHAN ABDUL GHAFFAR KHAN"," AUBIN MEHTA"],                         
+                          [" BUMBAY"," CHEENAI"," CALCUTTA"," DELHI"],
+                          [" COLUMBUS "," AMUNDSEN"," VASCO-DE-GAMMA "," WILLIAN BENTINA"]];
+                
+        var ans=[['1','1','1','1','4'],
+                    ['2','2','3','2','1'],
+                    ['4','2','2','1','1'],
+                    ['3','3','3','1','2'],
+                    ['4','3','4','1','2'],
+                    ['1','1','1','2','4'],
+                    ['1','2','2','3','3'],
+                    ['2','2','2','2','1'],
+                    ['2','1','4','2','5'],
+                    ['3','3','1','1','4'],
+                    ['3','1','4','1','1'],
+                    ['2','3','1','4','3'],
+                    ['2','4','3','1','3']
+                ];
+                function allClear()
+                {
+                    if(i>0)
+                    {
+                        hadding.innerHTML=" ";
+                        myTable.innerHTML=" ";
+                        
+                    }
+                }
+                function start()
+                { 
+                mid1.innerHTML="<img src='images/b3.jpg'height:300px;width:800px>";
+                    start1=1;
+                    if(ar==0)
+                    {
+                        chance=1;;
+                        document.getElementById("time").src="images/time.gif";
+                        audio1.src="sound/time.m4a";
+                        timeMusic(1);
+                        random();
+                        myVar = setTimeout(stopex, 30000);
+                        ar=1;
+                        questionPrice();
+                        priceTable(i);
+                       allClear();
+                        
+                    }
+                    
+                }
+                function life(value)
+                {
+                    if(value==1)
+                    {
+                        show.innerHTML="hello";
+                    }
+                }
+                function next()
+                {
+                   time.src="images/n1.jpg";
+                   t1.style.background="#701C82";
+                   t2.style.background="#701C82";
+                   t3.style.background="#701C82";
+                   t4.style.background="#701C82";
+                  
+                }
+                 function check(value)
+                 {
+                    
+                   if(chance==1)
+                   {
+                        colorChange(value);
+                     if(value==ans[i][x])
+                     {
+                       allClear();
+                        hadding.innerHTML="<marquee direction='up'behavior='slide'><img src='images/ri.png'></marquee>";
+                       
+                         rightAnswer();
+                         i=i+1;
+                         j=j+5;
+                         ar=0;
+                     }
+                     else
+                     {
+                         allClear();
+                         hadding.innerHTML="<marquee direction='up'behavior='slide'><img src='images/wr2.png'></marquee>";
+                         wrongAnswer();
+                         ar=1;
+                         exit();
+                      
+                     }
+                        chance=2;
+                   }  
+                 }
+                 function exit()
+                 {
+                      mid1.style.background="linear-gradient(-70deg,blue,green,#701C82)";
+                      mid1.innerHTML="<marquee direction='left'behavior='slide'><h2>YOU WINNING TOTAL PRIZE MONEY</h2></marquee><br><center><marquee direction='up'behavior='slide'><h1>"+rup2+"</h1></marquee></center>";
+                 }
+                 function questionPrice()
+                 {
+                     if(i==0)
+                     {
+                         rup=q1.innerHTML;
+                     }
+                     else if(i==1)
+                     {
+                         rup=q2.innerHTML;
+                         rup2=q1.innerHTML;
+                     }
+                     else if(i==2)
+                     {
+                         rup=q3.innerHTML;
+                         rup2=q2.innerHTML;
+                     }
+                     else if(i==3)
+                     {
+                         rup=q4.innerHTML;
+                         rup2=q3.innerHTML;
+                     }
+                     else if(i==4)
+                     {
+                         rup=q5.innerHTML;
+                         rup2=q4.innerHTML;
+                     }
+                     else if(i==5)
+                     {
+                         rup2=q6.innerHTML;
+                         rup=q5.innerHTML;
+                     }
+                     else  if(i==6)
+                     {
+                         rup=q7.innerHTML;
+                         rup2=q6.innerHTML;
+                     }
+                     else if(i==7)
+                     {
+                         rup=q8.innerHTML;
+                         rup2=q7.innerHTML;
+                     }
+                     else   if(i==8)
+                     {
+                         rup=q9.innerHTML;
+                         rup2=q8.innerHTML;
+                     }
+                     else  if(i==9)
+                     {
+                         rup=q10.innerHTML;
+                         rup2=q9.innerHTML;
+                     }
+                     else  if(i==10)
+                     {
+                         rup=q11.innerHTML;
+                         rup2=q10.innerHTML;
+                     }
+                     else  if(i==11)
+                     {
+                         rup=q12.innerHTML;
+                         rup2=q11.innerHTML;
+                     }
+                     else  if(i==12)
+                     {
+                         rup=q13.innerHTML;
+                          rup1=q2.innerHTML;
+                     }
+                     else if(i==13)
+                     {
+                         rup=q14.innerHTML;
+                         rup2=q13.innerHTML;
+                     } 
+                         rupees.innerHTML=rup;
+                     
+                     
+                 }
+                 function colorChange(value)
+                 {
+                     if(value==1)
+                     {
+                         t1.style.background="#14006B";
+                     }
+                     else if(value==2)
+                     {
+                        t2.style.background="#14006B";
+                     }
+                     else if(value==3)
+                     {
+                       t3.style.background="#14006B";
+                     }
+                     else
+                     {
+                         t4.style.background="#14006B";
+                     }
+                 }
+                
+                 function rightAnswer()
+                 {
+                     clearTimeout(myVar);
+                     document.getElementById('time').src="images/r1.jpg";
+                     timeMusic(0);
+                     audio3.play();
+                     setTimeout(next, 1000);
+                 }
+                 function wrongAnswer()
+                 {
+                     clearTimeout(myVar);
+                     audio1.pause();
+                     audio1=new Audio('sound/wrong.mp3');
+                     audio1.play();
+                     document.getElementById('time').src="images/w2.jpg";
+                     if(ans[i][x]==1)
+                     {
+                         t1.style.background="#E00033";
+                     }
+                     else if(ans[i][x]==2)
+                     {
+                         t2.style.background="#E00033";
+                     }
+                     else if(ans[i][x]==3)
+                     {
+                         t3.style.background="#E00033";
+                     }
+                     else
+                     {
+                         t4.style.background="#E00033";
+                     }
+                    
+                     
+                 }
+                 function priceTable()
+                 {
+                     if(i==0)
+                     {
+                        ta1.style.background=" #335C99";  
+                     }
+                        
+                     else if(i==1)
+                     {
+                         ta1.style.background="#14006B";                         
+                         ta1.style.opacity = "0.2";
+                         ta2.style.background=" #335C99"; 
+                     }
+                     else if(i==2)
+                     {     
+                         ta3.style.background=" #335C99";                   
+                          ta2.style.opacity = "0.2";   
+                           
+                     }
+                     else if(i==3)
+                     {
+                             ta3.style.background="#14006B";
+                             ta3.style.opacity = "0.2";
+                             ta4.style.background=" #335C99";   
+                     }
+                     else if(i==4)
+                     {
+                             ta4.style.background="#14006B";
+                             ta4.style.opacity = "0.2";
+                             ta5.style.background=" #335C99"; 
+                     }
+                     else if(i==5)
+                     {
+                             ta5.style.background="#14006B";
+                             ta5.style.opacity = "0.2";
+                             ta6.style.background=" #335C99";
+                     }
+                     else  if(i==6)
+                     {
+                            ta6.style.background="#14006B";
+                            ta6.style.opacity = "0.2";
+                            ta7.style.background=" #335C99";
+                     } 
+                     else if(i==7)
+                     {
+                             ta7.style.opacity = "0.2";
+                             ta8.style.background=" #335C99";
+                     }
+                     else   if(i==8)
+                     {
+                            ta8.style.background="#14006B" ;
+                            ta8.style.opacity = "0.2";
+                            ta9.style.background=" #335C99";
+                     }
+                     else  if(i==9)
+                     {
+                             ta9.style.background="#14006B";
+                             ta9.style.opacity = "0.2";
+                             ta10.style.background=" #335C99";
+                     }
+                     else  if(i==10)
+                     {
+                             ta10.style.background="#14006B";
+                             ta10.style.opacity = "0.2";
+                             ta11.style.background=" #335C99";
+                     }
+                     else  if(i==11)
+                     {
+                             ta11.style.background="#14006B";
+                              ta11.style.opacity = "0.2";
+                              ta12.style.background=" #335C99";
+                     }
+                     else  if(i==12)
+                     {
+                             ta12.style.background="#14006B";
+                              ta12.style.opacity = "0.2";
+                              ta13.style.background=" #335C99";
+                     }
+                     else if(i==13)
+                     {
+                              ta13.style.opacity = "0.2";
+                     }
+                     
+                     
+                 }
+                 function random()
+                 {
+                     x=Math.floor((Math.random()*4)+1);   
+                     k=j+x;
+                     document.getElementById('qq').innerHTML=que[i][x];                  
+                     document.getElementById('b1').innerHTML=opt1[k][0];
+                     document.getElementById('b2').innerHTML=opt1[k][1];
+                     document.getElementById('b3').innerHTML=opt1[k][2];
+                     document.getElementById('b4').innerHTML=opt1[k][3];         
+      
+                 }
+                 function timeMusic(value)
+                 {
+                     if(value==1)
+                        audio1.play();
+                     else if(value==0)
+                        audio1.pause();                        
+                        
+                 }
+                 function stopex()
+                 {
+                     document.getElementById("time").src="images/p43.gif";
+                     hadding.innerHTML="<marquee direction='up'behavior='slide'><img src='images/s6.png'></marquee>";
+                     show.style.background="#14006B";                                       
+                     ar=1;
+                     chance=2
+                     exit();
+                  
+                 }
+                 function questionChange()
+                 {
+                       alert("hello");
+                     qu=x;
+                     if(qc==0 && start1==1)
+                     {
+                        do
+                        {
+                            x=Math.floor((Math.random()*4)+1);   
+                            k=j+x;
+                        }
+                        while(x==qu);
+                  
+                        document.getElementById('qq').innerHTML=que[i][x];                  
+                        document.getElementById('b1').innerHTML=opt1[k][0];
+                        document.getElementById('b2').innerHTML=opt1[k][1];
+                        document.getElementById('b3').innerHTML=opt1[k][2];
+                        document.getElementById('b4').innerHTML=opt1[k][3]; 
+                        l4.src="images/w1.jpg";
+                        qc==1;
+                     }
+                 }
+                  function fiftyfifty()
+                 {
+                   if(ff==0 && start1==1)
+                   {
+                        
+                   do
+                   {
+                        f1=Math.floor((Math.random()*3)+1); 
+                        f2=Math.floor((Math.random()*3)+1); 
+                       
+                   }
+                    while((f1==ans[i][x] || f2==ans[i][x])||f1==f2 );
+                    
+                   if(f1==1 || f2==1)
+                   {
+                       b1.innerHTML=" ";
+                   }
+                    if(f1==2 || f2==2)
+                   {
+                       b2.innerHTML=" ";
+                   }
+                    if(f1==3 || f2==3)
+                   {
+                       b3.innerHTML=" ";
+                   }
+                    if(f1==4 || f2==4)
+                   {
+                       b4.innerHTML=" ";
+                   }
+                      l1.src="images/w1.jpg";
+                      audio5.play();
+                            qc=1;
+                     }
+                 }
+                
+                 function pof()
+                 {  
+                                    
+                 
+                   if(phf1==0 &&start1==1)
+                   {                  
+                      
+                   do
+                   {
+                        f1=Math.floor((Math.random()*4)+1); 
+                        f2=Math.floor((Math.random()*4)+1); 
+                       
+                   }
+                    while((f1!=ans[i][x]||f2!=ans[i][x])&&f1==f2);           
+                       if(f1==1)
+                           hadding.innerHTML="<marquee behavior='slide'><h3>YOUR FRIEND <br>Answer is....</h3></marquee><br><marquee direction='up'behavior='slide'><img src='images/a3.png'></marquee>";
+                       else if(f1==2)
+                            hadding.innerHTML="<marquee behavior='slide'><h3>YOUR FRIEND <br>Answer is....</h3></marquee><br><marquee direction='up'behavior='slide'><img src='images/b1.jpg'></marquee>";  
+                       else if(f1==3)
+                             hadding.innerHTML="<marquee behavior='slide'><h3>YOUR FRIEND <br>Answer is....</h3></marquee><br><marquee direction='up'behavior='slide'><img src='images/cl.jpg'></marquee>";
+                       else if(f1==4)
+                            hadding.innerHTML="<marquee behavior='slide'><h3>YOUR FRIEND <br>Answer is....</h3></marquee><br><marquee direction='up'behavior='slide'><img src='images/d1.png'></marquee>";                    
+                      phf1=1;
+                      l2.src="images/w1.jpg";
+                      audio4.play();      
+                          
+                   }
+                 
+                 }
+                 function oudienss()
+                 {
+                   if(oc==0 && start1==1)
+                   {
+                    if(ans[i][x]=="1")
+                    {
+                        do
+                        {
+                            oudi1=Math.floor((Math.random()*20)+30);
+                        }
+                    
+                    while((total+oudi1)>=100);
+                    total=total+oudi1;
+                   
+                    }
+                    
+                    else
+                    {
+                        do
+                        {
+                            oudi1=Math.floor((Math.random()*25)+5);
+                            
+                        }
+                       while((total+oudi1)>=100);
+                       total=total+oudi1;
+                      
+                    }
+                     if(ans[i][x]=="2")
+                    {
+                        do
+                        {
+                            oudi2=Math.floor((Math.random()*20)+30);
+                        }
+                    
+                    while((total+oudi2)>=100);
+                    total=total+oudi2;
+                    
+                    }
+                    
+                    else
+                    {
+                        do
+                        {
+                            oudi2=Math.floor((Math.random()*25)+5);
+                            
+                        }
+                       while((total+oudi2)>=100);
+                       total=total+oudi2;
+                      
+                    }
+                     if(ans[i][x]=="3" && total<50)
+                    {
+                        do
+                        {
+                            oudi3=Math.floor((Math.random()*20)+30);
+                        }
+                    
+                    while((total+oudi3)>=100);
+                    total=total+oudi3;
+                   
+                    }
+                    
+                    else
+                    {
+                        do
+                        {
+                            oudi3=Math.floor((Math.random()*25)+5);
+                            
+                        }
+                       while((total+oudi3)>=100);
+                       total=total+oudi3;
+                      
+                    }
+                     if(ans[i][x]=="4" &&total<50)
+                    {
+                        do
+                        {
+                            oudi4=Math.floor((Math.random()*20)+30);
+                        }
+                    
+                    while((total+oudi4)>=100);
+                    total=total+oudi4;
+                   
+                    }
+                    
+                    else
+                    {
+                        do
+                        {
+                            oudi4=Math.floor((Math.random()*25)+5);
+                            
+                        }
+                       while((total+oudi4)>=100);
+                       total=total+oudi4;
+                       
+                    }
+                  oc=1;   
+                  hadding.innerHTML="Oudienss Pole";                
+                  var table = document.getElementById("myTable");               
+                  var row = table.insertRow(0);
+                  var cell1 = row.insertCell(0);
+                  var cell2 = row.insertCell(1);                 
+                  cell1.innerHTML = "A";
+                  cell2.innerHTML = oudi1+"%";
+                  var row = table.insertRow(1);
+                  var cell3 = row.insertCell(0);
+                  var cell4 = row.insertCell(1); 
+                  cell3.innerHTML = "B"; 
+                  cell4.innerHTML = oudi2+"%"; 
+                  var row = table.insertRow(2);
+                  var cell5 = row.insertCell(0);
+                  var cell6 = row.insertCell(1); 
+                  cell5.innerHTML = "C"; 
+                  cell6.innerHTML = oudi3+"%";
+                  var row = table.insertRow(3);
+                  var cell7 = row.insertCell(0);
+                  var cell8 = row.insertCell(1);                                
+                  cell7.innerHTML = "D";
+                  cell8.innerHTML = oudi4+"%";
+                  l3.src="images/w1.jpg";
+                  timeMusic(0);
+                  audio2.play();
+                  setTimeout(playMusic,3000);              
+                  
+                 }
+                 }
+                 
+                function playMusic()
+                {
+                    audio1.play();
+                }
+    </script>
+
+
+
+</body>
+
+</html>
